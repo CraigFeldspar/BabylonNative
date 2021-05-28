@@ -766,7 +766,7 @@ namespace Babylon
                 Napi::Function func = DefineClass(
                     env,
                     JS_CLASS_NAME,
-                    {});
+                    {Napi::ObjectWrap<PointerEvent>::InstanceAccessor("pointerId", &PointerEvent::GetPointerId, nullptr)});
 
                 env.Global().Set(JS_CLASS_NAME, func);
             }
@@ -780,6 +780,9 @@ namespace Babylon
                 : Napi::ObjectWrap<PointerEvent>{info}
             {
             }
+
+        private:
+            int32_t pointerId;
         };
 
         class XRWebGLLayer : public Napi::ObjectWrap<XRWebGLLayer>
