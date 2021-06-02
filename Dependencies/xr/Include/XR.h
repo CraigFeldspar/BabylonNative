@@ -58,7 +58,6 @@ namespace xr
     {
         size_t Width{};
         size_t Height{};
-        size_t Depth{};
     };
 
     struct Vector3f
