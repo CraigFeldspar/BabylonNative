@@ -637,7 +637,7 @@ namespace xr {
 #pragma clang diagnostic pop
                     metalLayer.device = metalDevice;
 
-                    auto scale = xrView.contentScaleFactor;
+                    auto scale = UIScreen.mainScreen.scale;
                     viewportSize.x = xrView.bounds.size.width * scale;
                     viewportSize.y = xrView.bounds.size.height * scale;
                     [sessionDelegate setViewSize:CGSizeMake(viewportSize.x, viewportSize.y)];
